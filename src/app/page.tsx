@@ -10,18 +10,29 @@ import { useState } from 'react';
 export default function Home() {
   // ts logic goes here for login area
   const[username, setName] = useState('');
+  const[password, setPassword] = useState('');
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
 
   };
+
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
+
+  };
+//roadmap for this class
+//make password box identical to username, make text with bubbles
+//style both of these two boxes
+//center the login button 
+//replace the next js button with another official image, or a logo of some sorts you made
+// make a footer with something nice like a note from editor with some cool designs and what not
 
 
   
   return (
     <div className="layout-grid">
       <main className="main-content">
-       
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -30,19 +41,26 @@ export default function Home() {
           height={38}
           priority
         />
-        <div className = "login-field">
+        <div className = "username-field">
             <input
               type="text"
               value={username}
-              onChange={handleChange}
+              onChange={handleNameChange}
               placeholder="username"
 
             />
+            
+          </div>
 
+          <div className = "password-field">
+              <input
+                type="password"
+                value={password}
+                onChange={handlePasswordChange}
+                placeholder="password"
+              />
 
-
-
-        </div>
+            </div>
       
       <div className="login-button-class">
           <Link href="/second"
