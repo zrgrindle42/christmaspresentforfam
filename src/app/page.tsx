@@ -29,6 +29,9 @@ export default function Home() {
 // make a footer with something nice like a note from editor with some cool designs and what not
 
 
+//learning the dtyling 
+//div, input, label handles text positioning and text animation
+
   
   return (
     <div className="layout-grid">
@@ -42,14 +45,25 @@ export default function Home() {
           priority
         />
         <div className = "username-field">
+          <div className="relative">           
             <input
+              id= "username"
               type="text"
               value={username}
               onChange={handleNameChange}
-              placeholder="username"
+              placeholder=" "
+              className= "username-input peer"
 
             />
-            
+            <label
+            htmlFor="username"
+            className="username-label"
+            >
+            Username
+            </label>
+
+
+            </div>
           </div>
 
           <div className = "password-field">
