@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 .layout-grid {
-    @apply font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 gap-16;
+    @apply font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 gap-16 bg-gradient-to-b via-pink-100 from-[#ebb0b0] to-yellow-100 ;
   }
   
   .main-content {
-    @apply flex flex-col gap-[48px] row-start-2 items-center w-full max-w-[400px] px-4;
+    @apply flex flex-col gap-[36px] row-start-2 items-center w-full max-w-[400px] px-4 py-10 bg-gradient-to-b from-yellow-100 to-pink-200  border border-gray-300 shadow-md shadow-pink-200;
   }
   
   .login-button-class {
@@ -28,9 +28,9 @@
   .password-label,
   .username-label
   {
-   @apply absolute cursor-text bg-transparent px-1 left-2.5 top-2.5 text-slate-400 
+   @apply absolute cursor-text bg-white px-1 left-2.5 top-2.5 text-slate-400 
    text-sm transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 
-   peer-focus:text-xs peer-focus:text-slate-400 peer-focus:scale-90;
+   peer-focus:text-xs peer-focus:text-slate-800 peer-focus:scale-90;
   }
 
 
@@ -39,5 +39,5 @@
   {
    @apply w-full bg-white placeholder:text-slate-400 text-slate-700 text-sm 
     border border-slate-200 rounded-md pl-3 py-2 transition duration-300
-    focus:outline-none focus:border-slate-400  hover:border-slate-300 shadow-sm focus:shadow;
+    focus:outline-none focus:border-slate-400  hover:border-slate-400 shadow-sm focus:shadow;
   } 
