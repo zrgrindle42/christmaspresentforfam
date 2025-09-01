@@ -45,19 +45,19 @@ export default function Home() {
           priority
         />
         <div className = "username-field">
-          <div className="relative">           
+          <div className="relative w-full">           
             <input
               id= "username"
               type="text"
               value={username}
               onChange={handleNameChange}
               placeholder=" "
-              className= "username-input peer"
+              className= "username-input peer w-full"
 
             />
             <label
             htmlFor="username"
-            className="username-label"
+            className="username-label peer"
             >
             Username
             </label>
@@ -67,14 +67,26 @@ export default function Home() {
           </div>
 
           <div className = "password-field">
-              <input
-                type="password"
-                value={password}
-                onChange={handlePasswordChange}
-                placeholder="password"
-              />
+          <div className="relative w-full">           
+            <input
+              id= "password"
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+              placeholder=" "
+              className= "password-input peer w-full"
+
+            />
+            <label
+            htmlFor="password"
+            className="password-label peer"
+            >
+            Password
+            </label>
+
 
             </div>
+          </div>
       
       <div className="login-button-class">
           <Link href="/second"
