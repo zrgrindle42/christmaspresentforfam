@@ -1,16 +1,25 @@
 "use client";
 import Image from "next/image";
-import Link  from "next/link";
+
 import './page.css';
 import { useState } from 'react';
+import router from "next/router";
 //import TextField from '@mui/material/TextField';
 
-//maybe import a css file
-//export default function for global styles in this class
+//username login stuff
+// 
 export default function Home() {
   // ts logic goes here for login area
+  const credentials :  { [key: string]: string } = {
+    zach : 'password123',
+    liz : 'sassy1',
+  };
   const[username, setName] = useState('');
   const[password, setPassword] = useState('');
+  const [error, setError] = useState("");
+  const [isAuthenticated, setAuthenticated] = useState(false);
+
+
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -20,6 +29,20 @@ export default function Home() {
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
 
+  };
+
+  const login = () => {
+      if(credentials[username] && credentials[username] === password )
+      {
+        setAuthenticated(true);
+        router.push("/second");
+
+      }
+      else{
+        setAuthenticated(false);
+        setError("Username/Password Incorrect! Please contact creator for guest key")
+        //eventually put some button to contact for my email
+      }
   };
 //roadmap for this class
 //make password box identical to username, make text with bubbles
@@ -89,11 +112,11 @@ export default function Home() {
           </div>
       
       <div className="login-button-class">
-          <Link href="/second"
-            className="login-button">
+          <button className = "login-button" onClick={login}>
             Login
-          </Link> 
-        </div>
+          </button>
+      </div>
+
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
