@@ -1,13 +1,74 @@
 // app/second/page.tsx
+//crEATING THE SKELETON OF THE SECOND PAGE no aesthetic work yet
+import './second.css';
 export default function SecondPage() {
+  const albums = [
+    {
+      id: 1,
+      title: "Album 1",
+      imageUrl: "/images/album1.jpg",
+    },
+    {
+      id: 2,
+      title: "Album 2",
+      imageUrl: "/images/album2.jpg",
+    },
+    {
+      id: 3,
+      title: "Album 3",
+      imageUrl: "/images/album3.jpg",
+    },
+    {
+      id: 4,
+      title: "Album 4",
+      imageUrl: "/images/album4.jpg",
+    },
+  ];
+  
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-2xl">
+    <div className= "all-content">
 
-      <p>This is the second page</p>
-        <p>
-          my beeb
-        </p>
+      <header>
+        <div className = "header-area">
+            <h3 className = "header-text">
+                Welcome to Liz's Scrapbook 
+             </h3>
+             <p className = "supporting-text">
+                to organize our favorite moments!
+             </p>
+        </div>
+      </header>
+
+      <main className = "main-content">
+        <div className = "album-grid">
+          
+            {albums.map((album) => (
+              <button
+              key={album.id}
+              className="album-card"
+              style={{
+                backgroundImage: `url(${album.imageUrl})`,
+              }}
+              onClick={() => console.log(`Clicked ${album.title}`)}
+              
+            >
+             {/* might not need this for transparent}*/}
+              <div className = "button-text-layout">
+                <span className="button-text">
+                  {album.title}  
+                  </span>
+              </div>
+            </button>
+            ))}
+            
+
+          
+        </div>
+      </main>
+
     </div>
+
+      
     
   );
 }
