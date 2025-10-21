@@ -1,12 +1,13 @@
 // app/second/page.tsx
 //crEATING THE SKELETON OF THE SECOND PAGE no aesthetic work yet
+'use client';
 import './second.css';
 export default function SecondPage() {
   const albums = [
     {
       id: 1,
       title: "Album 1",
-      imageUrl: "/images/album1.jpg",
+      imageUrl: "/IMG_6086.jpeg",
     },
     {
       id: 2,
@@ -30,9 +31,9 @@ export default function SecondPage() {
 
       <header>
         <div className = "header-area">
-            <h3 className = "header-text">
+            <h2 className = "header-text">
                 Welcome to Liz's Scrapbook 
-             </h3>
+             </h2>
              <p className = "supporting-text">
                 to organize our favorite moments!
              </p>
