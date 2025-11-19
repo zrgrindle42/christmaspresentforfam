@@ -17,7 +17,7 @@ export default function SecondPage() {
     {
       id: 3,
       title: "Album 3",
-      imageUrl: "/images/album3.jpg",
+      imageUrl: "/IMG_6153.jpeg",
     },
     {
       id: 4,
@@ -66,7 +66,10 @@ export default function SecondPage() {
           
         </div>
       </main>
+      
+      <footer>
 
+      </footer>
     </div>
 
       

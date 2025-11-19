@@ -1,34 +1,78 @@
 @import "tailwindcss";
 
+.all-content
+{
+
+}
+
 .header-area /* center the items */
 {
     @apply flex flex-col items-center justify-center text-slate-700 h-20;
 }
-.header-text 
-{
-  @apply  text-4xl font-extrabold tracking-tight leading-tight;
-}
-.supporting-text
-{
-    @apply mt-2 text-lg text-gray-200 max-w-xl text-center;
-}
+.header-text {
+    @apply text-4xl font-extrabold tracking-tight leading-tight text-white/70;
+  
+    text-shadow:
+      0 0 6px #fff,
+      0 0 12px #ffbf80,
+      0 0 20px #ff9c3d,
+      0 0 40px #ff7a00;
+  }
+  
+  
+  
+  
+  
+  .supporting-text {
+    @apply mt-2 text-lg max-w-xl text-center text-white;
+  
+    /* Soft neon glow */
+    text-shadow: 
+      0 0 4px rgba(255, 255, 255, 0.6),
+      0 0 8px rgba(255, 180, 90, 0.5),
+      0 0 14px rgba(255, 140, 50, 0.4);
+  }
+  
 .main-content
 {
-
+    @apply h-[800px];
 }
 .album-grid
 {
-   @apply bg-cover bg-center grid  grid-cols-2 grid-rows-2 gap-4 w-full h-full max-w-4xl mx-auto p-4;
+   @apply bg-white/10 border border-white/40 rounded-xl shadow-2xl 
+    bg-cover bg-center grid  grid-cols-2 grid-rows-2 
+    gap-4 w-full min-h-[600px] max-w-4xl mx-auto p-6;
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.15),
+        inset 0 0 10px rgba(255,255,255,0.1);
 }
 
 .album-card
 {
-   @apply relative w-48 h-48 bg-cover bg-center border-none  outline-none
+   @apply relative w-full h-48 bg-cover bg-center
+    border-none rounded-lg overflow-hidden min-w-full min-h-full
     transition
     duration-150
     active:scale-95
     active:brightness-90
     hover:brightness-110
+    hover:scale-105
+    cursor-pointer
     focus:outline-none;
   
+}
+.button-text-layout
+{
+    @apply absolute bottom-2 left-1/2 transform -translate-x-1/2;
+}
+.button-text
+{
+    @apply bg-black/40 px-4 py-1 text-white text-lg font-bold
+    rounded-lg shadow-lg backdrop-blur-sm border border-white/20
+    transition duration-200;
+    text-shadow: 0 0 6px rgba(255,255,255,0.8);
+}
+.album-card:hover .button-text {
+    @apply bg-black/60;
+    text-shadow: 0 0 10px rgba(255,255,255,1);
 }
